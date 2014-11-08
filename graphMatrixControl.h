@@ -2,6 +2,7 @@
 #define GRAPHMATRIXCONTROL_H
 
 #include <vector>
+#include "graphNode.h"
 
 class graphMatrixControl
 {
@@ -12,11 +13,12 @@ class graphMatrixControl
         void removeVertex(int data);
         void linkVertices(int, int);
         void unlinkVertices(int,int);
-        int findVertex(int);
+        int  findVertex(int);
     protected:
     private:
-        int edgeMatrix[1000][1000];
-        std::vector<int> verticesList;
+        const static int maxSize=1000;
+        int edgeMatrix[maxSize][maxSize];
+        std::vector<graphNode*> verticesList;
 };
 
 #endif // GRAPHMATRIXCONTROL_H
